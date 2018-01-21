@@ -1,0 +1,46 @@
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "./variables.scss";
+
+body,
+html {
+  position: relative;
+  height: 100%;
+  background: $color-bg;
+  color: $color-blacked;
+  font-family: 'Exo 2', Helvetica, Arial, sans-serif;
+  font-size: 100%;
+}
+
+header {
+  background: $color-satan;
+
+  nav {
+    @extend .container;
+    display: flex;
+    height: 90px;
+    align-items: center;
+
+    a,
+    a:link {
+      color: $color-white;
+      display: block;
+      padding: 5px;
+
+      &.active,
+      &:active,
+      &:focus,
+      &:hover {
+        color: $color-silver;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+main {
+  .container {
+    padding-bottom: 60px;
+    padding-top: 60px;
+  }
+}
