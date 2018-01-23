@@ -2,3 +2,4 @@
 Core features (under construction):
 - mobX
 - jQuery & ES6 available
+- React Router 4
