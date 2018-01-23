@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Router } from 'react-router-dom'
+import { Provider } from 'mobx-react';
 import Home from './Home';
 import About from './About';
 
