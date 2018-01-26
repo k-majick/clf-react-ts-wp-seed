@@ -1,12 +1,19 @@
 import * as React from 'react';
+import { Switch, Route, Router } from 'react-router-dom'
 import Header from './Header';
-import Main from './Main';
+import Home from './Home';
+import About from './About';
 
-const App = () => (
+const Main = () => (
   <div>
     <Header />
-    <Main />
+    <main>
+      <Switch>
+        <Route exact path='/' component={Home}/>
+        <Route path='/about' component={About}/>
+      </Switch>
+    </main>
   </div>
 );
 
-export default App;
+export default Main;

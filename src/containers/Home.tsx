@@ -1,39 +1,46 @@
 import * as React from 'react';
-import * as Component from 'react';
 
-interface IMyComponentProps {
-  someDefaultValue: string
+interface Props {
+  posts: any
 }
 
-interface IMyComponentState {
-  someValue: string
+interface State {
+  posts: any
 }
 
-class Home extends React.Component<IMyComponentProps, IMyComponentState> {
-  constructor(props: IMyComponentProps) {
+class Home extends React.Component<Props, State> {
+  constructor(props: any) {
     super(props);
-    this.state = { someValue: this.props.someDefaultValue };
+    this.state = {
+      posts: []
+    }
   }
 
-  public render() {
-    return (
-      <div className="container">
-      Value set as {this.state.someValue}
+  componentDidMount() {
+    let dataURL = "http://cyberleaf.pl/wp-json/wp/v2/posts";
+    fetch(dataURL)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          posts: res
+        })
+      })
+  }
+
+  render() {
+    let posts = this.state.posts.map((post: any, index: any) => {
+      return <div key={index}>
+      <p>{post.title.rendered}</p>
       </div>
-    );
+
+    });
+    return (
+     <div className="container">
+      <h2>Articles</h2>
+      {posts}
+     </div>
+    )
   }
 }
-
-/*
-  function Welcome(props: any) {
-    return <h1>Welcome, {props.name}</h1>;
-  }
-
-const Home = () => (
-  <div className="container">
-    <Welcome name="Anonymous" />
-  </div>
-)
-*/
 
 export default Home;

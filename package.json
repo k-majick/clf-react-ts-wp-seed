@@ -11,7 +11,7 @@
     "@types/react-dom": "^16.0.3",
     "@types/react-hot-loader": "^3.0.5",
     "@types/react-router-dom": "^4.2.3",
-    "@types/webpack-env": "^1.13.3",    
+    "@types/webpack-env": "^1.13.3",
     "history": "^4.7.2",
     "jquery": "^3.2.1",
     "jquery-visible": "^1.2.0",
@@ -29,6 +29,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-decorators": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -53,7 +54,8 @@
   },
   "babel": {
     "plugins": [
-      "react-hot-loader/babel"
+      "react-hot-loader/babel",
+      "transform-decorators"
     ],
     "presets": [
       [
