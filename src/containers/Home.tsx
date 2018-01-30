@@ -1,46 +1,14 @@
 import * as React from 'react';
+import PostList from '../components/PostList';
+import AppState from '../AppState';
 
-interface Props {
-  posts: any
-}
+const appState = new AppState();
 
-interface State {
-  posts: any
-}
+const About = () => (
+  <div className="container">
+    <h2>Articles</h2>
+    <PostList appState={appState} />
+  </div>
+)
 
-class Home extends React.Component<Props, State> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      posts: []
-    }
-  }
-
-  componentDidMount() {
-    let dataURL = "http://cyberleaf.pl/wp-json/wp/v2/posts";
-    fetch(dataURL)
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          posts: res
-        })
-      })
-  }
-
-  render() {
-    let posts = this.state.posts.map((post: any, index: any) => {
-      return <div key={index}>
-      <p>{post.title.rendered}</p>
-      </div>
-
-    });
-    return (
-     <div className="container">
-      <h2>Articles</h2>
-      {posts}
-     </div>
-    )
-  }
-}
-
-export default Home;
+export default About;
