@@ -18,7 +18,7 @@ class PostList extends React.Component<Props, State> {
   }
 
   render() {
-    const { posts } = this.props.appState
+    const { posts } = this.props.appState;
     return (
       <div>
         {posts.map((post: any) =>

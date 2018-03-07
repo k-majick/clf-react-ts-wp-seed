@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index",
-  "typings": "index",
   "dependencies": {
     "@types/jquery": "^3.2.17",
     "@types/node": "^9.3.0",
