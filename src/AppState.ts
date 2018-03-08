@@ -12,7 +12,7 @@ class AppState {
         res.json()
       ]))
       .then(postsData => {
-        this.totalPages = postsData[0];
+        this.totalPages = postsData[2];
         this.posts = postsData[1];
       });
   }
@@ -23,7 +23,7 @@ class AppState {
         res.json()
       ]))
       .then(menuData => {
-        this.menu = menuData;
+        this.menu = menuData[0].items;
       });
   }
 }

@@ -19,15 +19,13 @@ class Navigation extends React.Component<Props, State> {
 
   render() {
     const { menu } = this.props.appState;
-    console.log(this.props.appState);
     return (
-      <div>
-        {menu.map((menu: any) =>
-          <span dangerouslySetInnerHTML={{__html: menu.items}} key={menu.items[0].id} />
+      <nav>
+        {menu.map((item: any) =>
+          <NavLink to={`/${item.object_slug}`} key={item.id}>{item.title}</NavLink>
         )}
-      </div>
+      </nav>
     );
-
   }
 }
 
