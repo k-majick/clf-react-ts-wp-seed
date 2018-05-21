@@ -7,12 +7,14 @@ import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'mobx-react';
 import App from './containers/App';
+import AppState from './AppState';
+const appState = new AppState();
 
 const root = document.getElementById('app');
 
 render(
   <AppContainer>
-    <Provider >
+    <Provider AppState={AppState}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
@@ -25,7 +27,7 @@ if (process.env.NODE_ENV !== 'production' && (module as any).hot) {
     const NextApp = require('./containers/App').default;
     render(
       <AppContainer>
-        <Provider >
+        <Provider AppState={AppState}>
           <BrowserRouter>
             <NextApp />
           </BrowserRouter>

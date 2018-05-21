@@ -4,11 +4,11 @@ import AppState from '../AppState';
 
 const appState = new AppState();
 
-const About = () => (
+const Home = () => (
   <div className="container">
     <h2>Articles</h2>
     <PostList appState={appState} />
   </div>
 )
 
-export default About;
+export default Home;

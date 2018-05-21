@@ -6,15 +6,12 @@ interface Props {
   appState: any
 }
 
-interface State {
-  posts: any
-}
-
 @observer
-class Navigation extends React.Component<Props, State> {
+class Navigation extends React.Component<Props, {}> {
 
   componentDidMount() {
     this.props.appState.fetchMenu();
+    console.log(this.props.appState);
   }
 
   render() {
@@ -22,7 +19,7 @@ class Navigation extends React.Component<Props, State> {
     return (
       <nav>
         {menu.map((item: any) =>
-          <NavLink to={`/${item.object_slug}`} key={item.id}>{item.title}</NavLink>
+          <NavLink to={`/${item.object_slug}`} key={item.id}>{item.title && <p>{item.title}</p>}</NavLink>          
         )}
       </nav>
     );
