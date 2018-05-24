@@ -7,7 +7,7 @@ import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'mobx-react';
 import App from './containers/App';
-import AppState from './AppState';
+import AppState from './stores/AppState';
 const appState = new AppState();
 
 const root = document.getElementById('app');

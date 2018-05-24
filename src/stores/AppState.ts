@@ -11,6 +11,16 @@ class AppState {
     this.timer++;
   };
 
+  @action reset = (): void => {
+    this.timer = 0;
+  };
+
+  constructor() {
+    setInterval(() => {
+      this.timer += 1;
+    }, 1000);
+  }
+
   fetchPosts(postType: string) {
     return fetch(`http://cyberleaf.pl/wp-json/wp/v2/posts/?per_page=2`)
       .then(res => Promise.all([

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import Navigation from '../components/Navigation';
-import AppState from '../AppState';
+import AppState from '../stores/AppState';
 
 const appState = new AppState();
 
