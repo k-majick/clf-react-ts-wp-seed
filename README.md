@@ -1,5 +1,6 @@
 # clf-react-ts-wp-starter
-Core features (under construction):
+Core features:
 - mobX
-- jQuery & ES6 available
+- jQuery
+- TypeScript
 - React Router 4
